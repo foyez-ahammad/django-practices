@@ -1,0 +1,26 @@
+{% extends 'index.html' %}
+
+{% block title %} Products {% endblock title %}
+{% block body1 %} PRODUCTS {% endblock body1 %}
+
+{% block body2 %}
+
+<div class="row">
+    {% for product in products %}
+    <div class="col my-4">
+        <div class="card" style="width: 18rem;">
+            <img src="{{product.image_url}}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <center>
+                    <h5 class="card-title">{{product.name}} | Price: ${{product.price}}</h5>
+                    <p class="card-text">This is description</p>
+                    <a href="{% url 'order' %}" class="btn btn-primary">Add to card</a>
+                </center>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+
+{% endblock body2 %}

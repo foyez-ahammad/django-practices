@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+
+{% block title %} Adding {% endblock title %}
+
+{% block body1 %}
+
+<form action="{% url 'adding' %}" method='POST'>
+    {% csrf_token %}
+    <label for="f_name">First Name: </label><br>
+    <input type="text" id="f_name" name="f_name" value="{{ f_name }}"><br>
+    <label for="l_name">Last Name: </label><br>
+    <input type="text" id="l_name" name="l_name" value="{{ l_name }}"><br>
+    <label for="dept">Select Department: </label><br>
+    <input type="number" id="dept" name="dept" value="{{ dept }}"><br>
+    <label for="salary">Salary Amount: </label><br>
+    <input type="number" id="salary" name="salary" value="{{ salary }}"><br>
+    <label for="bonus">Bonus Amount: </label><br>
+    <input type="number" id="bonus" name="bonus" value="{{ bonus }}"><br>
+    <label for="role">Select Role: </label><br>
+    <input type="number" id="role" name="role" value="{{ role }}"><br>
+    <label for="phone">Phone Number: </label><br>
+    <input type="number" id="phone" name="phone" value="{{ phone }}"><br>
+
+    <br>
+    <button type="submit" class="btn btn-primary">Submit</button><br>
+</form>
+
+{% endblock body1 %}

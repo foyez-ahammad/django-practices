@@ -1,0 +1,46 @@
+{% extends 'index.html' %}
+
+{% block title %} Contact {% endblock title %}
+{% block body1 %} CONTACT {% endblock body1 %}
+
+{% block body2 %}
+
+{% if messages %}
+{% for message in messages %}
+<div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+    <strong>{{ message }}</strong> Mail has been sent!
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{% endfor %}
+{% endif %}
+<div>
+    <div class="container">
+        <form method="post" action="{% url 'contact' %}">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" class="form-control" id="name" name="name" placeholder="Enter Your Name">
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="Enter Email Address">
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone:</label>
+                <input type="phone" class="form-control" id="phone" name="phone" placeholder="Enter Phone Number">
+            </div>
+            <div class="form-group">
+                <label for="desc">Write Details Why you want contact:</label>
+                <textarea class="form-control" id="desc" rows=4 name="desc" placeholder="Type Details..."></textarea>
+            </div>
+            <br>
+            <center>
+                <button class="btn btn-primary form-group" type="submit">Submit</button>
+            </center>
+        </form>
+    </div>
+</div>
+
+
+
+{% endblock body2 %}

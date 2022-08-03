@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+
+{% block containt %}
+{% load crispy_forms_tags %}
+<div class="row d-flex justify-content-center">
+    <div class="col-sm-4">
+        <h4 class="alert alert-primary text-center">{{'Adding New User' | upper}}</h4>
+        <form action="{% url 'create' %}" method="post">
+            {% csrf_token %}
+            {{form | crispy}}
+            <br>
+            <div class="d-grid gap-2">
+                <input class="btn btn-primary" type="submit" value="Create">
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock containt %}
