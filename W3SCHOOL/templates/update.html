@@ -1,0 +1,10 @@
+{% load crispy_forms_tags %}
+<h1>Update Member</h1>
+
+
+<form method="POST">
+    {% csrf_token %}
+    {{form | crispy}}
+    <br>
+    <input type="submit" value="Update">
+</form>

@@ -1,0 +1,48 @@
+{% extends 'index.html' %}
+
+{% block title %} About {% endblock title %}
+{% block body1 %} ABOUT {% endblock body1 %}
+
+
+{% block body2 %}
+
+<div class="container">
+    <p>
+        Student: <br>
+        I have already completed my Alim (HSC). I got (automatic result (Covid-19 pandemic)) <b>{{gpa | upper}}</b> in HSC and before, I got a <b>{{gpa | upper}}</b> in SSC. <br><br>
+
+        Profession: <br>
+        I'm Learner. I'm trying to learn Python, <b>{{skill | upper}}</b> & then, if possible, have enough time and situation or opportunity. I want
+        learn more... (it's overall Django Developer) <br><br>
+
+        I already know: <br>
+        <b>{{skill_know | upper}}</b> I hope I have reached my target. <br><br>
+
+        {{name | upper}}
+    </p>
+</div>
+
+<div>
+    <br><hr><br>
+    <h1>TEMPLATES TAG</h1><br>
+    <div>
+        {% if num == 5 %}
+        <h3>This is IF condition</h3>
+        {% elif num == 10%}
+        <h3>This is ELIF condition</h3>
+        {% else %}
+        <h3>This is ELSE condition</h3>
+        {% endif %}
+    </div>
+    <div>
+        {% for knowledg in knowledge %}
+        {{forloop.counter}}. {{knowledg}} <br>
+        {% endfor %}
+    </div>
+    <div>
+    </div>
+</div>
+
+
+
+{% endblock body2 %}
